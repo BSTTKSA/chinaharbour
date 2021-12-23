@@ -13,7 +13,6 @@
     "depends": ['base', 'web', 'l10n_gcc_invoice', 'l10n_sa', 'l10n_sa_invoice'],
     "data": [
         'security/account_security.xml',
-        'views/assets.xml',
         'views/company.xml',
         'views/partner.xml',
         'views/account.xml',
