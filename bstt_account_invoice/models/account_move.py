@@ -11,6 +11,7 @@ class AccountMove(models.Model):
 
     project_name = fields.Char(string='Project Name')
 
+
     @api.depends('amount_total', 'amount_untaxed', 'l10n_sa_confirmation_datetime', 'company_id', 'company_id.vat')
     def _compute_qr_code_str(self):
         """ Generate the qr code for Saudi e-invoicing. Specs are available at the following link at page 23

@@ -3,69 +3,51 @@
     <template id="bstt_account_invoice.dun_bank_info">
         <div style="page-break-inside: avoid;">
             <div class="row">
-                <div class="col-4" style="text-align:center;padding-bottom: 20px;"></div>
-                <div class="col-4" style="text-align:center;padding-bottom: 20px;"></div>
-                <div class="col-4" style="text-align:center;padding-bottom: 20px;"></div>
+                <div class="col-4" style="text-align:center;padding-bottom: 20px;">        </div>
+                <div class="col-4" style="text-align:center;padding-bottom: 20px;">        </div>
+                <div class="col-4" style="text-align:center;padding-bottom: 20px;">        </div>
             </div>
             <div class="row">
-                <div class="col-8" style="text-align:left; font-weight: bold;white-space:nowrap ">For TELEGRAPHIC
-                    TRANSFER (TT), please transfer to:
-                </div>
-                <div class="col-4" style="text-align:right; font-weight: bold;">الرجاء التحويل إالى</div>
+                <div class="col-8" style="text-align:left; font-weight: bold;white-space:nowrap ">For TELEGRAPHIC TRANSFER (TT), please transfer to:</div>
+                <div class="col-4" style="text-align:right; font-weight: bold;">الرجاء التحويل إالى </div>
 
             </div>
             <div class="row">
-                <div class="col-4 border" style="text-align:left;">ACCOUNT NAME</div>
-                <div class="col-4 border" style="text-align:center;">
-                    <span t-field="o.partner_bank_id.acc_holder_name"></span>
-                </div>
-                <div class="col-4 border" style="text-align:right;">اسم الحساب</div>
+                <div class="col-4 border" style="text-align:left;"> ACCOUNT NAME </div>
+                <div class="col-4 border" style="text-align:center;"><span t-field="o.partner_bank_id.acc_holder_name"></span></div>
+                <div class="col-4 border" style="text-align:right;">اسم الحساب </div>
             </div>
             <div class="row">
-                <div class="col-4 border" style="text-align:left;">BANK NAME</div>
-                <div class="col-4 border" style="text-align:center;">
-                    <span t-field="o.partner_bank_id.bank_id.name"></span>
-                </div>
-                <div class="col-4 border" style="text-align:right;">اسم البنك</div>
+                <div class="col-4 border" style="text-align:left;">BANK NAME </div>
+                <div class="col-4 border" style="text-align:center;"><span t-field="o.partner_bank_id.bank_id.name"></span>  </div>
+                <div class="col-4 border" style="text-align:right;">اسم  البنك  </div>
             </div>
             <div class="row">
-                <div class="col-4 border" style="text-align:left;">A/C NO</div>
-                <div class="col-4 border" style="text-align:center;">
-                    <span t-field="o.partner_bank_id.acc_number"></span>
-                </div>
-                <div class="col-4 border" style="text-align:right;">رقم الحساب الريال السعودي</div>
+                <div class="col-4 border" style="text-align:left;">A/C NO </div>
+                <div class="col-4 border" style="text-align:center;"><span t-field="o.partner_bank_id.acc_number"></span> </div>
+                <div class="col-4 border" style="text-align:right;"> رقم الحساب الريال السعودي </div>
             </div>
             <div class="row">
-                <div class="col-4 border" style="text-align:left;">IBAN #</div>
-                <div class="col-4 border" style="text-align:center;">
-                    <span t-esc="o.partner_bank_id.bank_bic"></span>
-                </div>
-                <div class="col-4 border" style="text-align:right;">الريال السعودي أيبان</div>
+                <div class="col-4 border" style="text-align:left;">IBAN # </div>
+                <div class="col-4 border" style="text-align:center;"> <span t-esc="o.partner_bank_id.bank_bic"></span> </div>
+                <div class="col-4 border" style="text-align:right;">الريال السعودي أيبان </div>
             </div>
             <div class="row">
-                <div class="col-4 border" style="text-align:left;">Swift Code</div>
-                <div class="col-4 border" style="text-align:center;">
-                    <span t-esc="o.partner_bank_id.swift_code"></span>
-                </div>
-                <div class="col-4 border" style="text-align:right;">سويفت كود</div>
+                <div class="col-4 border" style="text-align:left;">Swift Code </div>
+                <div class="col-4 border" style="text-align:center;"> <span t-esc="o.partner_bank_id.swift_code"></span> </div>
+                <div class="col-4 border" style="text-align:right;">سويفت كود </div>
             </div>
             <div class="row p-1 mt-1 bg-light">
-                <div class="col-12" style="text-align:center; font-weight: bold;">
-                    <Strong>This is a Computer Generated Invoice and doesn't require Signature</Strong>
-                </div>
+                <div class="col-12" style="text-align:center; font-weight: bold;"><Strong>This is a Computer Generated Invoice and doesn't require Signature</Strong></div>
             </div>
             <div class="row">
-                <div class="col-4 text-center">
-                    <p>Customer signature:</p>
-                </div>
+                <div class="col-4 text-center"><p>Customer signature:</p></div>
                 <div class="col-4"></div>
                 <div class="col-4"></div>
             </div>
             <div class="row"></div>
             <div class="row">
-                <div class="col-4 text-center">
-                    <strong>--------------------</strong>
-                </div>
+                <div class="col-4 text-center"><strong>--------------------</strong></div>
                 <div class="col-4"></div>
                 <div class="col-4"></div>
 
@@ -73,14 +55,13 @@
         </div>
     </template>
 
-    <template id="arabic_english_invoice" inherit_id="l10n_gcc_invoice.arabic_english_invoice">
+    <template id="arabic_english_invoice" inherit_id="l10n_gcc_invoice.arabic_english_invoice" >
         <xpath expr="//t[@t-call='l10n_gcc_invoice.external_layout_standard']" position="attributes">
             <attribute name="style">font-size: small;font-family: 'Dubai-Regular', cursive;</attribute>
         </xpath>
         <xpath expr="//h3" position="replace">
-            <h3 style="text-align: center !important;">
-                <div class="row text-center"
-                     style="text-align: center !important;border-radius: 8px;margin-left: 15px;margin-right: 15px;">
+            <h3  style="text-align: center !important;">
+                <div class="row text-center" style="text-align: center !important;border-radius: 8px;margin-left: 15px;margin-right: 15px;">
                     <div class="col-6 " style="text-align: right !important;">
                         <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">
                             Tax Invoice
@@ -103,79 +84,79 @@
                     </div>
 
                     <div class="col-6 " style="text-align: left !important;">
-                        <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">
-                            فاتورة ضريبية
-                        </span>
-                        <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">
-                            مسودة فاتورة
-                        </span>
-                        <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">
-                            فاتورة ملغاة
-                        </span>
-                        <span t-if="o.move_type == 'out_refund'">
-                            إشعار خصم
-                        </span>
-                        <span t-if="o.move_type == 'in_refund'">
-                            إشعار خصم المورد
-                        </span>
-                        <span t-if="o.move_type == 'in_invoice'">
-                            فاتورة المورد
-                        </span>
-                    </div>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">
+                                فاتورة ضريبية
+                            </span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">
+                                مسودة فاتورة
+                            </span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">
+                                فاتورة ملغاة
+                            </span>
+                            <span t-if="o.move_type == 'out_refund'">
+                                إشعار خصم
+                            </span>
+                            <span t-if="o.move_type == 'in_refund'">
+                                إشعار خصم المورد
+                            </span>
+                            <span t-if="o.move_type == 'in_invoice'">
+                                فاتورة المورد
+                            </span>
+                        </div>
                 </div>
             </h3>
         </xpath>
-        <xpath expr="//div[@id='informations']" position="replace">
+        <xpath expr="//div[@id='informations']" position="replace" >
         </xpath>
         <xpath expr="//h3" position="after">
             <div id="informations" style="margin-left: 15px;margin-right: 15px;">
-            <div class="row">
-                <div class="col-9">
-                    <div class="row" t-if="o.name" name="inv_name">
-                        <div class="col-4">
-                            <strong style="white-space:nowrap">Invoice Number:
-                            </strong>
+                <div class="row">
+                    <div class="col-9">
+                        <div class="row" t-if="o.name" name="inv_name">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Invoice Number:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-if="o.name != '/'" t-field="o.name"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    رقم الفاتورة
+                                </strong>
+                            </div>
                         </div>
-                        <div class="col-4 text-center">
-                            <span t-if="o.name != '/'" t-field="o.name"/>
+                        <div class="row" t-if="o.invoice_date" name="invoice_date">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Invoice Date:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-field="o.invoice_date"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    تاريخ الفاتورة
+                                </strong>
+                            </div>
                         </div>
-                        <div class="col-4 text-right">
-                            <strong style="white-space:nowrap">:
-                                رقم الفاتورة
-                            </strong>
+                        <div class="row"
+                             t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'"
+                             name="due_date">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Due Date:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-field="o.invoice_date_due"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    تاريخ الاستحقاق
+                                </strong>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row" t-if="o.invoice_date" name="invoice_date">
-                        <div class="col-4">
-                            <strong style="white-space:nowrap">Invoice Date:
-                            </strong>
-                        </div>
-                        <div class="col-4 text-center">
-                            <span t-field="o.invoice_date"/>
-                        </div>
-                        <div class="col-4 text-right">
-                            <strong style="white-space:nowrap">:
-                                تاريخ الفاتورة
-                            </strong>
-                        </div>
-                    </div>
-                    <div class="row"
-                         t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'"
-                         name="due_date">
-                        <div class="col-4">
-                            <strong style="white-space:nowrap">Due Date:
-                            </strong>
-                        </div>
-                        <div class="col-4 text-center">
-                            <span t-field="o.invoice_date_due"/>
-                        </div>
-                        <div class="col-4 text-right">
-                            <strong style="white-space:nowrap">:
-                                تاريخ الاستحقاق
-                            </strong>
-                        </div>
-                    </div>
-                    <div class="row" t-if="o.l10n_sa_delivery_date" name="delivery_date">
+                        <div class="row" t-if="o.l10n_sa_delivery_date" name="delivery_date">
                         <div class="col-4">
                             <strong style="white-space:nowrap">Delivery Date:
                             </strong>
@@ -188,8 +169,7 @@
                                 تاريخ التوصيل
                             </strong>
                         </div>
-                        <br/>
-                        <br/>
+                    </div>
                         <div class="row" t-if="o.project_name" name="project_name">
                             <div class="col-4">
                                 <strong style="white-space:nowrap">Project Name:
@@ -225,88 +205,56 @@
                         <t t-esc="o._compute_qr_code_str()"/>
                         <img t-if="o.l10n_sa_qr_code_str" style="display:block;margin: auto;"
                              t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 100, 100)"/>
-                    </div>
+                        </div>
                 </div>
                 <div class="col-auto mw-100 mb-4" t-if="o.ref" name="reference">
-                    <div class="col-4">
-                        <strong style="white-space:nowrap">Reference:
-                        </strong>
-                    </div>
-                    <div class="col-4">
-                        <span t-field="o.ref"/>
-                    </div>
-                    <div class="col-4 text-right">
-                        <strong style="white-space:nowrap">:
-                            رقم الإشارة
-                        </strong>
-                    </div>
-                </div>
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Reference:
+                                </strong>
+                            </div>
+                            <div class="col-4">
+                                <span t-field="o.ref"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    رقم الإشارة
+                                </strong>
+                            </div>
+                        </div>
             </div>
 
             <div style="page-break-inside: avoid;margin-top: 17px;margin-bottom: 17px">
                 <div class="row">
-                    <div class="col-6 " style="text-align:left;font-weight: bold;">
-                        <span t-field="o.partner_id.name"/>
-                    </div>
-                    <div class="col-6 " style="text-align:right;font-weight: bold;direction: rtl;">
-                        <span t-field="o.partner_id.foreign_name"/>
-                    </div>
+                    <div class="col-6 " style="text-align:left;font-weight: bold;"><span t-field="o.partner_id.name"/></div>
+                    <div class="col-6 " style="text-align:right;font-weight: bold;direction: rtl;"><span t-field="o.partner_id.foreign_name"/></div>
                 </div>
                 <div class="row">
-                    <div class="col-6 " style="text-align:left;">Vat #:
-                        <span t-field="o.partner_id.vat"/>
-                    </div>
-                    <div class="col-6 " style="text-align:right;">الرقم الضريبي
-                        <span t-field="o.partner_id.vat"/>
-                    </div>
+                    <div class="col-6 " style="text-align:left;">Vat #: <span t-field="o.partner_id.vat"/></div>
+                    <div class="col-6 " style="text-align:right;">الرقم الضريبي <span t-field="o.partner_id.vat"/></div>
                 </div>
                 <div class="row">
-                    <div class="col-6 " style="text-align:left;">Customer Code:
-                        <span t-field="o.partner_id.ref"/>
-                    </div>
-                    <div class="col-6 " style="text-align:right;direction: rtl;">كود العميل
-                        <span t-field="o.partner_id.ref"/>
-                    </div>
+                    <div class="col-6 " style="text-align:left;">Customer Code: <span t-field="o.partner_id.ref"/></div>
+                    <div class="col-6 " style="text-align:right;direction: rtl;">كود العميل <span t-field="o.partner_id.ref"/></div>
                 </div>
                 <div class="row" t-if="o.partner_id.street or o.partner_id.arabic_street">
-                    <div class="col-6 " style="text-align:left;">Customer Address:
-                        <span t-field="o.partner_id.street"/>
-                    </div>
-                    <div class="col-6 " style="text-align:right;direction: rtl;">عنوان العميل
-                        <span t-field="o.partner_id.arabic_street"/>
-                    </div>
+                    <div class="col-6 " style="text-align:left;" >Customer Address: <span t-field="o.partner_id.street"/></div>
+                    <div class="col-6 " style="text-align:right;direction: rtl;" >عنوان العميل <span t-field="o.partner_id.arabic_street"/></div>
                 </div>
                 <div class="row" t-if="o.partner_id.street2 or o.partner_id.arabic_street2">
-                    <div class="col-6 " style="text-align:left;">
-                        <span t-field="o.partner_id.street2"/>
-                    </div>
-                    <div class="col-6 " style="text-align:right;direction: rtl;">
-                        <span t-field="o.partner_id.arabic_street2"/>
-                    </div>
+                    <div class="col-6 " style="text-align:left;" ><span t-field="o.partner_id.street2"/></div>
+                    <div class="col-6 " style="text-align:right;direction: rtl;" > <span t-field="o.partner_id.arabic_street2"/></div>
                 </div>
                 <div class="row" t-if="o.partner_id.city or o.partner_id.arabic_city">
-                    <div class="col-6 " style="text-align:left;">
-                        <span t-field="o.partner_id.city"/>
-                    </div>
-                    <div class="col-6 " style="text-align:right;direction: rtl;">
-                        <span t-field="o.partner_id.arabic_city"/>
-                    </div>
+                    <div class="col-6 " style="text-align:left;"><span t-field="o.partner_id.city"/></div>
+                    <div class="col-6 " style="text-align:right;direction: rtl;"> <span t-field="o.partner_id.arabic_city"/></div>
                 </div>
                 <div class="row" t-if="o.partner_id.zip or o.partner_id.arabic_zip">
-                    <div class="col-6 " style="text-align:left;">
-                        <span t-field="o.partner_id.zip"/>
-                    </div>
-                    <div class="col-6 " style="text-align:right;direction: rtl;">
-                        <span t-field="o.partner_id.arabic_zip"/>
-                    </div>
+                    <div class="col-6 " style="text-align:left;"><span t-field="o.partner_id.zip"/></div>
+                    <div class="col-6 " style="text-align:right;direction: rtl;"> <span t-field="o.partner_id.arabic_zip"/></div>
                 </div>
                 <div class="row" t-if="o.partner_id.country_id.name or o.partner_id.arabic_country">
-                    <div class="col-6 " style="text-align:left;">
-                        <span t-field="o.partner_id.country_id.name"/>
-                    </div>
-                    <div class="col-6 " style="text-align:right;direction: rtl;">
-                        <span t-field="o.partner_id.arabic_country"/>
-                    </div>
+                    <div class="col-6 " style="text-align:left;" ><span t-field="o.partner_id.country_id.name"/></div>
+                    <div class="col-6 " style="text-align:right;direction: rtl;"> <span t-field="o.partner_id.arabic_country"/></div>
                 </div>
             </div>
 
@@ -426,8 +374,7 @@
                         <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"
                            groups="account.group_show_line_subtotals_tax_included"/>
 
-                        <tr class="border"
-                            t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                        <tr class="border" t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
                             <t t-if="not line.display_type" name="account_invoice_line_accountable">
                                 <td class="border" name="account_invoice_line_name">
                                     <span t-field="line.product_id.name" t-options="{'widget': 'text'}"/>
@@ -437,7 +384,7 @@
                                               t-options="{'widget': 'text'}"/>
                                     </t>
                                 </td>
-                                <td t-if="o.company_id.show_product_code" class="border text-right">
+                                <td  t-if="o.company_id.show_product_code" class="border text-right">
                                     <span t-field="line.product_id.default_code"/>
                                 </td>
                                 <td class="border text-right">
@@ -481,7 +428,7 @@
 
                         <t t-if="current_section and (line_last or lines[line_index+1].display_type == 'line_section')">
                             <tr class="border is-subtotal text-right" style="background: #D3D8D7  !important;">
-                                <td cclass="border" olspan="99" style="background: #D3D8D7  !important;">
+                                <td cclass="border" olspan="99"  style="background: #D3D8D7  !important;" >
                                     <strong class="mr16" style="display: inline-block">Subtotal/الإجمالي الفرعي</strong>
                                     <span
                                             t-esc="current_subtotal"
@@ -494,17 +441,14 @@
                 </tbody>
             </table>
         </xpath>
-        <xpath expr="//div[@class='clearfix pt-4 pb-3']" position="after">
+        <xpath expr="//div[@class='clearfix pt-4 pb-3']" position="after" >
             <div class="row p-1 mt-1 bg-light">
-                <div class="col-12">
-                    <Strong>Amount in words:</Strong>
-                    <span t-esc="o.currency_id.amount_to_text(o.amount_total)"></span>
-                </div>
+                <div class="col-12" ><Strong>Amount in words: </Strong><span t-esc="o.currency_id.amount_to_text(o.amount_total)"></span></div>
             </div>
         </xpath>
 
-        <!--        <xpath expr="//div[@name='customer_code']" position="replace" >-->
-        <!--        </xpath>-->
+<!--        <xpath expr="//div[@name='customer_code']" position="replace" >-->
+<!--        </xpath>-->
         <xpath expr="//p[@t-if='o.invoice_incoterm_id']" position="after">
             <t t-call="bstt_account_invoice.dun_bank_info"/>
         </xpath>
