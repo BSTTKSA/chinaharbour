@@ -89,9 +89,7 @@
                         </ul>
                         <div class="row">
                             <div class="col-12" name="company_address">
-                            <div t-field="company.partner_id"
-                                 t-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'
-                            />
+                            <div t-field="company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;], &quot;no_marker&quot;: true}"/>
                         </div>
                         </div>
 
@@ -112,9 +110,7 @@
                 </div>
             </xpath>
             <xpath expr="//div[@t-attf-class='article o_report_layout_standard o_company_#{company.id}_layout']" position="replace">
-                <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
-                     t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
-                     t-att-data-oe-lang="o and o.env.context.get('lang')" >
+                <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
 <!--                    <div class="pt-5">-->
 <!--                        <t t-set="address">-->
 <!--                            <address t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' class="mb-0"/>-->
@@ -135,32 +131,31 @@
                                 <h4 class="mt0" t-field="company.report_header" style="text-align:left;"/>
                                 <div class="float-center mb4" style="text-align:left;">
 <!--                               class="list-group list-group-flush flex-wrap flex-row flex-lg-column"   >-->
-                                    <ul  class="list-inline"  style="text-align:left;">
+                                    <ul class="list-inline" style="text-align:left;">
                                         <li class="float-center mb4" style="font-size: large;white-space: nowrap;"><span t-field="company.name"/></li>
                                         <li class="float-center mb4" style="font-size: large;white-space: nowrap;"><span t-field="company.branch_name_e"/></li>
-                                        <li class="float-center mb4"><span >Kingdom of Saudi Arabia</span></li>
+                                        <li class="float-center mb4"><span>Kingdom of Saudi Arabia</span></li>
                                         <li class="float-center mb4"><span t-if="company.partner_id.vat">
                                             <t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>:
                                             <span t-field="company.partner_id.vat"/>
                                         </span>
                                         </li>
-                                        <li class="float-center mb4"><span >CR No: </span><span t-field="company.company_registry"></span></li>
+                                        <li class="float-center mb4"><span>CR No: </span><span t-field="company.company_registry"/></li>
                                     </ul>
                                 </div>
                             </div>
                         <div class="col-2 ">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="height: 110px;width: 200px;display: block;margin-left: -50px;"
-                                 alt="Logo"/>
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="height: 110px;width: 150px;display: block;margin-left: -35px;" alt="Logo"/>
                         </div>
                         <div class="col-5 text-center" style="text-align:right;">
                                 <h4 class="mt0" t-field="company.report_header" style="text-align:right;"/>
                                 <div class="float-center mb4" style="text-align:right;">
-                                    <ul  class="list-inline" >
-                                        <li class="ml-4 float-center mb4" style="font-size: large;white-space: nowrap"><span t-field="company.foreign_name"/></li>
+                                    <ul class="list-inline">
+                                        <li class="ml-4 float-center mb4" style="font-size: small;font-weight: bold;white-space: nowrap"><span t-field="company.foreign_name"/></li>
                                         <li class="ml-4 float-center mb4" style="font-size: large;white-space: nowrap"><span t-field="company.branch_name_a"/></li>
-                                        <li class="ml-4 float-center"><span >المملكة العربية السعودية</span></li>
-                                        <li class="ml-4 float-center"><span t-field="company.vat"></span>الرقم الضريبي </li>
-                                        <li class="ml-4 float-center"><span t-field="company.company_registry"></span>س.ت </li>
+                                        <li class="ml-4 float-center"><span>المملكة العربية السعودية</span></li>
+                                        <li class="ml-4 float-center"><span t-field="company.vat"/>الرقم الضريبي </li>
+                                        <li class="ml-4 float-center"><span t-field="company.company_registry"/>س.ت </li>
                                     </ul>
                                 </div>
                             </div>

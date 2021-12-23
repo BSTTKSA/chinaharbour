@@ -185,6 +185,21 @@
                             </div>
 
                         </div>
+                        <div class="row" t-if="o.project_code" name="project_code">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Internal Code:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-field="o.project_code"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    الكود :
+                                </strong>
+                            </div>
+
+                        </div>
                         <div class="row" t-if="o.invoice_origin" name="origin">
                             <div class="col-4">
                                 <strong style="white-space:nowrap">Source:
