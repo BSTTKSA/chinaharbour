@@ -14,7 +14,7 @@
             </div>
             <div class="row">
                 <div class="col-4 border" style="text-align:left;"> ACCOUNT NAME </div>
-                <div class="col-4 border" style="text-align:center;"><span t-field="o.partner_bank_id.acc_holder_name"></span></div>
+                <div class="col-4 border" style="text-align:center;"><span t-field="o.partner_bank_id.partner_id.name></span></div>
                 <div class="col-4 border" style="text-align:right;">اسم الحساب </div>
             </div>
             <div class="row">
