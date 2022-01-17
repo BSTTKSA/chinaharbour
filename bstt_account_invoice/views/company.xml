@@ -17,6 +17,11 @@
                 <xpath expr="//field[@name='parent_id']" position="after">
                     <field name="show_product_code" />
                 </xpath>
+                <xpath expr="//field[@name='street2']" position="after">
+                    <field name="arabic_street" />
+                    <field name="arabic_street2" />
+                    <field name="arabic_city" />
+                </xpath>
             </field>
         </record>
 
