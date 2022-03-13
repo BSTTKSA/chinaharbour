@@ -139,7 +139,8 @@
                             <div class="float-center mb4" style="text-align:left;">
                                 <!--                               class="list-group list-group-flush flex-wrap flex-row flex-lg-column"   >-->
                                 <ul class="list-inline" style="text-align:left;">
-                                    <li class="float-center mb4" style="font-size: large;white-space: nowrap;">
+                                    <li class="float-center mb4"
+                                        style="font-size: small;font-weight: bold;white-space: nowrap;">
                                         <span t-field="company.name"/>
                                     </li>
                                     <li class="float-center mb4" style="font-size: large;white-space: nowrap;">
@@ -168,7 +169,7 @@
                         </div>
                         <div class="col-2 ">
                             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
-                                 style="height: 110px;width: 150px;display: block;margin-left: -35px;" alt="Logo"/>
+                                 style="height: 110px;width: 120px;display: block;margin-left: 10px;" alt="Logo"/>
                         </div>
                         <div class="col-5 text-center" style="text-align:right;">
                             <h4 class="mt0" t-field="company.report_header" style="text-align:right;"/>
@@ -182,8 +183,7 @@
                                         <span t-field="company.branch_name_a"/>
                                     </li>
                                     <li class="ml-4 float-center mb4" style="font-size: small;white-space: nowrap">
-                                        <span
-                                            t-field="company.arabic_street"/>,
+                                        <span t-field="company.arabic_street"/>,
                                         <span t-field="company.arabic_street2"/>,
                                         <span t-field="company.arabic_city"/>
                                     </li>

@@ -367,8 +367,7 @@
                                 الكمية
                             </span>
                         </th>
-                        <th name="th_priceunit"
-                            class="border text-right">
+                        <th name="th_priceunit" class="border text-right">
                             <span>
                                 Unit price
                             </span>
@@ -377,8 +376,7 @@
                                 سعر الوحدة
                             </span>
                         </th>
-                        <th name="th_price_unit" t-if="display_discount"
-                            class="border text-right">
+                        <th name="th_price_unit" t-if="display_discount" class="border text-right">
                             <span>
                                 Disc.%
                             </span>
@@ -388,8 +386,7 @@
                             </span>
                             <t t-set="colspan" t-value="colspan+1"/>
                         </th>
-                        <th name="th_taxes"
-                            class="border text-right">
+                        <th name="th_taxes" class="border text-right">
                             <span>
                                 Taxes
                             </span>
@@ -407,8 +404,7 @@
                                 مبلغ
                             </span>
                         </th>
-                        <th name="border th_tax_amount"
-                            class="text-right">
+                        <th name="border th_tax_amount" class="text-right">
                             <span>
                                 VAT Amount
                             </span>
@@ -461,8 +457,7 @@
                                 <td class="border text-right">
                                     <span class="text-nowrap" t-field="line.price_unit"/>
                                 </td>
-                                <td t-if="display_discount"
-                                    class="border text-right">
+                                <td t-if="display_discount" class="border text-right">
                                     <span class="text-nowrap" t-field="line.discount"/>
                                 </td>
                                 <td class="border text-right">
@@ -497,10 +492,8 @@
                             <tr class="border is-subtotal text-right" style="background: #D3D8D7  !important;">
                                 <td cclass="border" olspan="99" style="background: #D3D8D7  !important;">
                                     <strong class="mr16" style="display: inline-block">Subtotal/الإجمالي الفرعي</strong>
-                                    <span
-                                            t-esc="current_subtotal"
-                                            t-options='{"widget": "monetary", "display_currency": o.currency_id}'
-                                    />
+                                    <span t-esc="current_subtotal"
+                                          t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                 </td>
                             </tr>
                         </t>
@@ -512,7 +505,13 @@
             <div class="row p-1 mt-1 bg-light">
                 <div class="col-12">
                     <Strong>Amount in words:</Strong>
-                    <span t-esc="o.currency_id.amount_to_text(o.amount_total)"></span>
+                    <span t-esc="o.currency_id.amount_to_text(o.amount_total)"/>
+                </div>
+            </div>
+            <div class="row p-1 mt-1 bg-light">
+                <div class="col-12">
+                    <Strong>المبلغ بالكلمات:</Strong>
+                    <span t-esc="o.currency_id.amount_to_text_ar.amount_to_text(o.amount_total)"/>
                 </div>
             </div>
         </xpath>
