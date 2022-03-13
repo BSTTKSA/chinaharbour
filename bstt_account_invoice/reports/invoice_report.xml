@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-4 border" style="text-align:left;">ACCOUNT NAME</div>
                 <div class="col-4 border" style="text-align:center;">
-                    <span t-field="o.partner_bank_id.acc_holder_name"></span>
+                    <span t-field="o.partner_bank_id.partner_id.name"></span>
                 </div>
                 <div class="col-4 border" style="text-align:right;">اسم الحساب</div>
             </div>
@@ -129,67 +129,66 @@
         </xpath>
         <xpath expr="//h3" position="after">
             <div id="informations" style="margin-left: 15px;margin-right: 15px;">
-            <div class="row">
-                <div class="col-9">
-                    <div class="row" t-if="o.name" name="inv_name">
-                        <div class="col-4">
-                            <strong style="white-space:nowrap">Invoice Number:
-                            </strong>
+                <div class="row">
+                    <div class="col-9">
+                        <div class="row" t-if="o.name" name="inv_name">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Invoice Number:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-if="o.name != '/'" t-field="o.name"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    رقم الفاتورة
+                                </strong>
+                            </div>
                         </div>
-                        <div class="col-4 text-center">
-                            <span t-if="o.name != '/'" t-field="o.name"/>
+                        <div class="row" t-if="o.invoice_date" name="invoice_date">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Invoice Date:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-field="o.invoice_date"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    تاريخ الفاتورة
+                                </strong>
+                            </div>
                         </div>
-                        <div class="col-4 text-right">
-                            <strong style="white-space:nowrap">:
-                                رقم الفاتورة
-                            </strong>
+                        <div class="row"
+                             t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'"
+                             name="due_date">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Due Date:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-field="o.invoice_date_due"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    تاريخ الاستحقاق
+                                </strong>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row" t-if="o.invoice_date" name="invoice_date">
-                        <div class="col-4">
-                            <strong style="white-space:nowrap">Invoice Date:
-                            </strong>
+                        <div class="row" t-if="o.l10n_sa_delivery_date" name="delivery_date">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Delivery Date:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-field="o.l10n_sa_delivery_date"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    تاريخ التوصيل
+                                </strong>
+                            </div>
                         </div>
-                        <div class="col-4 text-center">
-                            <span t-field="o.invoice_date"/>
-                        </div>
-                        <div class="col-4 text-right">
-                            <strong style="white-space:nowrap">:
-                                تاريخ الفاتورة
-                            </strong>
-                        </div>
-                    </div>
-                    <div class="row"
-                         t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'"
-                         name="due_date">
-                        <div class="col-4">
-                            <strong style="white-space:nowrap">Due Date:
-                            </strong>
-                        </div>
-                        <div class="col-4 text-center">
-                            <span t-field="o.invoice_date_due"/>
-                        </div>
-                        <div class="col-4 text-right">
-                            <strong style="white-space:nowrap">:
-                                تاريخ الاستحقاق
-                            </strong>
-                        </div>
-                    </div>
-                    <div class="row" t-if="o.l10n_sa_delivery_date" name="delivery_date">
-                        <div class="col-4">
-                            <strong style="white-space:nowrap">Delivery Date:
-                            </strong>
-                        </div>
-                        <div class="col-4 text-center">
-                            <span t-field="o.l10n_sa_delivery_date"/>
-                        </div>
-                        <div class="col-4 text-right">
-                            <strong style="white-space:nowrap">:
-                                تاريخ التوصيل
-                            </strong>
-                        </div>
-                        <br/>
-                        <br/>
                         <div class="row" t-if="o.project_name" name="project_name">
                             <div class="col-4">
                                 <strong style="white-space:nowrap">Project Name:
@@ -201,6 +200,21 @@
                             <div class="col-4 text-right">
                                 <strong style="white-space:nowrap">:
                                     اسم المشروع :
+                                </strong>
+                            </div>
+
+                        </div>
+                        <div class="row" t-if="o.project_code" name="project_code">
+                            <div class="col-4">
+                                <strong style="white-space:nowrap">Internal Code:
+                                </strong>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span t-field="o.project_code"/>
+                            </div>
+                            <div class="col-4 text-right">
+                                <strong style="white-space:nowrap">:
+                                    الكود :
                                 </strong>
                             </div>
 

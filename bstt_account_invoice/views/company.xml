@@ -8,14 +8,19 @@
             <field name="inherit_id" ref="base.view_company_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='partner_id']" position="before">
-                    <field name="foreign_name" placeholder="Foreign Name" />
-                    <field name="branch_name_a" placeholder="اسم الفرع" />
+                    <field name="foreign_name" placeholder="Foreign Name"/>
+                    <field name="branch_name_a" placeholder="اسم الفرع"/>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="branch_name_e" placeholder="Company Branch Name" />
+                    <field name="branch_name_e" placeholder="Company Branch Name"/>
                 </xpath>
                 <xpath expr="//field[@name='parent_id']" position="after">
-                    <field name="show_product_code" />
+                    <field name="show_product_code"/>
+                </xpath>
+                <xpath expr="//field[@name='street2']" position="after">
+                    <field name="arabic_street" placeholder="Arabic Street..." class="o_address_street"/>
+                    <field name="arabic_street2" placeholder="Arabic Street 2..." class="o_address_street"/>
+                    <field name="arabic_city" placeholder="Arabic City" class="o_address_city"/>
                 </xpath>
             </field>
         </record>
@@ -23,7 +28,7 @@
         <record id="product_template_form_view_bstt" model="ir.ui.view">
             <field name="name">product_extended.product.form.bstt</field>
             <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
             <field name="arch" type="xml">
                 <field name="company_id" position="attributes">
                     <attribute name="required">1</attribute>
@@ -37,7 +42,7 @@
             <field name="inherit_id" ref="base.view_partner_bank_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='bank_id']" position="after">
-                    <field name="swift_code" />
+                    <field name="swift_code"/>
                 </xpath>
             </field>
         </record>

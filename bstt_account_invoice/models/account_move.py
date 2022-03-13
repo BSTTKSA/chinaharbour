@@ -9,7 +9,17 @@ from odoo.exceptions import UserError
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    project_name = fields.Char(string='Project Name')
+    project_name = fields.Char(string='Project Name', required=True)
+    project_code = fields.Char(string='Internal Code', required=True)
+    channge_code = fields.Char(compute='_change_code')
+
+    def _change_code(self):
+        if self.project_name and self.project_code:
+            invcode = self.project_name + '-' + self.project_code + '-' + 'INV'
+            self.env['account.journal'].sudo().search([('name', '=', 'Customer Invoices')]).write({
+                'code': invcode,
+            }
+            )
 
     @api.depends('amount_total', 'amount_untaxed', 'l10n_sa_confirmation_datetime', 'company_id', 'company_id.vat')
     def _compute_qr_code_str(self):
@@ -40,4 +50,3 @@ class AccountMove(models.Model):
                 str_to_encode = seller_name_enc + company_vat_enc + timestamp_enc + invoice_total_enc + total_vat_enc
                 qr_code_str = base64.b64encode(str_to_encode).decode('UTF-8')
             record.l10n_sa_qr_code_str = qr_code_str
-
