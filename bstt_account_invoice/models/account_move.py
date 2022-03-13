@@ -9,8 +9,8 @@ from odoo.exceptions import UserError
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    project_name = fields.Char(string='Project Name', required=True)
-    project_code = fields.Char(string='Internal Code', required=True)
+    project_name = fields.Char(string='Project Name')
+    project_code = fields.Char(string='Internal Code')
     channge_code = fields.Char(compute='_change_code')
 
     def _change_code(self):

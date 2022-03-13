@@ -43,6 +43,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='bank_id']" position="after">
                     <field name="swift_code"/>
+                    <field name="bank_name_ar"/>
                 </xpath>
             </field>
         </record>

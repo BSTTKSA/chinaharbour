@@ -16,15 +16,21 @@
             </div>
             <div class="row">
                 <div class="col-4 border" style="text-align:left;">ACCOUNT NAME</div>
-                <div class="col-4 border" style="text-align:center;">
+                <div class="col-4 border" style="text-align:center;width:50%;">
                     <span t-field="o.partner_bank_id.partner_id.name"></span>
+                </div>
+                <div class="col-4 border" style="text-align:center;width:50%;">
+                    <span t-field="o.partner_bank_id.partner_id.foreign_name"></span>
                 </div>
                 <div class="col-4 border" style="text-align:right;">اسم الحساب</div>
             </div>
             <div class="row">
                 <div class="col-4 border" style="text-align:left;">BANK NAME</div>
-                <div class="col-4 border" style="text-align:center;">
+                <div class="col-4 border" style="text-align:center;width:50%;">
                     <span t-field="o.partner_bank_id.bank_id.name"></span>
+                </div>
+                <div class="col-4 border" style="text-align:center;width:50%;">
+                    <span t-field="o.partner_bank_id.bank_name_ar"></span>
                 </div>
                 <div class="col-4 border" style="text-align:right;">اسم البنك</div>
             </div>
@@ -177,7 +183,7 @@
                         </div>
                         <div class="row" t-if="o.l10n_sa_delivery_date" name="delivery_date">
                             <div class="col-4">
-                                <strong style="white-space:nowrap">Delivery Date:
+                                <strong style="white-space:nowrap">Invoice Period:
                                 </strong>
                             </div>
                             <div class="col-4 text-center">
@@ -185,7 +191,7 @@
                             </div>
                             <div class="col-4 text-right">
                                 <strong style="white-space:nowrap">:
-                                    تاريخ التوصيل
+                                    مدة الفاتورة :
                                 </strong>
                             </div>
                         </div>
@@ -511,7 +517,7 @@
             <div class="row p-1 mt-1 bg-light">
                 <div class="col-12">
                     <Strong>المبلغ بالكلمات:</Strong>
-                    <span t-esc="o.currency_id.amount_to_text_ar.amount_to_text(o.amount_total)"/>
+                    <span t-esc="o.text_amount"/>
                 </div>
             </div>
         </xpath>

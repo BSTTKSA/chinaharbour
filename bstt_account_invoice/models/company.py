@@ -22,3 +22,4 @@ class ResPartnerBank(models.Model):
     _inherit = 'res.partner.bank'
 
     swift_code = fields.Char('Swift Code')
+    bank_name_ar = fields.Char('Bank Name Arabic')
