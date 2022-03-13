@@ -18,6 +18,7 @@
                 <div class="col-4 border" style="text-align:left;">ACCOUNT NAME</div>
                 <div class="col-4 border" style="text-align:center;">
                     <span t-field="o.partner_bank_id.partner_id.name" style="text-align:center;width:50%;"></span>
+                    <br/>
                     <span t-field="o.partner_bank_id.partner_id.foreign_name" style="text-align:center;width:50%;"></span>
                 </div>
                 <div class="col-4 border" style="text-align:right;">اسم الحساب</div>
@@ -26,6 +27,7 @@
                 <div class="col-4 border" style="text-align:left;">BANK NAME</div>
                 <div class="col-4 border" style="text-align:center;width:50%;">
                     <span t-field="o.partner_bank_id.bank_id.name" style="text-align:center;width:50%;"></span>
+                    <br/>
                     <span t-field="o.partner_bank_id.bank_name_ar" style="text-align:center;width:50%;"></span>
                 </div>
                 <div class="col-4 border" style="text-align:right;">اسم البنك</div>
