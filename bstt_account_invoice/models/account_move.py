@@ -12,6 +12,8 @@ class AccountMove(models.Model):
     project_name = fields.Char(string='Project Name')
     project_code = fields.Char(string='Internal Code')
     channge_code = fields.Char(compute='_change_code')
+    fromdate = fields.Date(string='From Date', default=fields.Date.context_today, copy=False)
+    todate = fields.Date(string='To Date', default=fields.Date.context_today, copy=False)
 
     def _change_code(self):
         if self.project_name and self.project_code:

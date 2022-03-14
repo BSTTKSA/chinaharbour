@@ -13,7 +13,12 @@
                     <field name="project_name" required="1"/>
                     <field name="project_code" required="1"/>
                 </xpath>
-
+                <label for="fromdate" string="Invoice Period"/>
+                <div class="d-flex">
+                    <field name="fromdate"/>
+                    <span class="o_form_label mx-3 oe_edit_only">-</span>
+                    <field name="todate"/>
+                </div>
             </field>
         </record>
 
