@@ -17,7 +17,7 @@
                     <label for="fromdate" string="Invoice Period"/>
                     <div class="d-flex">
                         <field name="fromdate"/>
-                        <span class="o_form_label mx-3 oe_edit_only">-</span>
+                        <span class="o_form_label mx-3 oe_edit_only">To</span>
                         <field name="todate"/>
                     </div>
                 </xpath>
