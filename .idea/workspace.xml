@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6a7d6758-68eb-4868-82e7-8690e9eb56ac" name="Changes" comment="modify ChinaHarbour invoice 1432022921PM" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="49616182-9082-473c-a41c-d9f83f03e539" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/bstt_account_invoice/reports/invoice_report.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="22gQ9Zq1JWbQfFu6j4ZiKarw8Lc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowVersion Control.ShowToolbar": "false",
+    "settings.editor.selected.configurable": "vcs.Git"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\i.abdelatif\Desktop\BSTT_Projects\chinaharbour" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a7d6758-68eb-4868-82e7-8690e9eb56ac" name="Changes" comment="" />
+      <created>1640256601088</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640256601088</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add ChinaHarbour invoice 23122021101PM">
+      <created>1640257316160</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640257316160</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add ChinaHarbour invoice 23122021101PM">
+      <created>1640258008746</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640258008746</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add ChinaHarbour invoice 1332022213PM">
+      <created>1647173610832</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1647173610832</updated>
+    </task>
+    <task id="LOCAL-00004" summary="modify ChinaHarbour invoice 1332022213PM">
+      <created>1647173966149</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647173966149</updated>
+    </task>
+    <task id="LOCAL-00005" summary="modify ChinaHarbour invoice 1332022626PM">
+      <created>1647188784633</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647188784633</updated>
+    </task>
+    <task id="LOCAL-00006" summary="modify ChinaHarbour invoice 1332022753PM">
+      <created>1647194036059</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647194036059</updated>
+    </task>
+    <task id="LOCAL-00007" summary="modify ChinaHarbour invoice 1332022758PM">
+      <created>1647194312181</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647194312181</updated>
+    </task>
+    <task id="LOCAL-00008" summary="modify ChinaHarbour invoice 1332022802PM">
+      <created>1647194543573</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647194543573</updated>
+    </task>
+    <task id="LOCAL-00009" summary="modify ChinaHarbour invoice 1432022847PM">
+      <created>1647283629110</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647283629110</updated>
+    </task>
+    <task id="LOCAL-00010" summary="modify ChinaHarbour invoice 1432022901PM">
+      <created>1647284491745</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647284491745</updated>
+    </task>
+    <task id="LOCAL-00011" summary="modify ChinaHarbour invoice 1432022921PM">
+      <created>1647285687571</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647285687571</updated>
+    </task>
+    <task id="LOCAL-00012" summary="modify ChinaHarbour invoice 1432022921PM">
+      <created>1647285761856</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1647285761856</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add ChinaHarbour invoice 23122021101PM" />
+    <MESSAGE value="Add ChinaHarbour invoice 1332022213PM" />
+    <MESSAGE value="modify ChinaHarbour invoice 1332022213PM" />
+    <MESSAGE value="modify ChinaHarbour invoice 1332022626PM" />
+    <MESSAGE value="modify ChinaHarbour invoice 1332022753PM" />
+    <MESSAGE value="modify ChinaHarbour invoice 1332022758PM" />
+    <MESSAGE value="modify ChinaHarbour invoice 1332022802PM" />
+    <MESSAGE value="modify ChinaHarbour invoice 1432022847PM" />
+    <MESSAGE value="modify ChinaHarbour invoice 1432022901PM" />
+    <MESSAGE value="modify ChinaHarbour invoice 1432022921PM" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify ChinaHarbour invoice 1432022921PM" />
+  </component>
+</project>
