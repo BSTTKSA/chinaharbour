@@ -17,18 +17,22 @@
             <div class="row">
                 <div class="col-4 border" style="text-align:left;">ACCOUNT NAME</div>
                 <div class="col-4 border" style="text-align:center;">
-                    <span t-field="o.partner_bank_id.partner_id.name" style="text-align:center;width:50%;font-size: small;"></span>
+                    <span t-field="o.partner_bank_id.partner_id.name"
+                          style="text-align:center;width:50%;font-size: small;"></span>
                     <br/>
-                    <span t-field="o.partner_bank_id.partner_id.foreign_name" style="text-align:center;width:50%;font-size: small;"></span>
+                    <span t-field="o.partner_bank_id.partner_id.foreign_name"
+                          style="text-align:center;width:50%;font-size: small;"></span>
                 </div>
                 <div class="col-4 border" style="text-align:right;">اسم الحساب</div>
             </div>
             <div class="row">
                 <div class="col-4 border" style="text-align:left;">BANK NAME</div>
                 <div class="col-4 border" style="text-align:center;width:50%;">
-                    <span t-field="o.partner_bank_id.bank_id.name" style="text-align:center;width:50%;font-size: small;"></span>
+                    <span t-field="o.partner_bank_id.bank_id.name"
+                          style="text-align:center;width:50%;font-size: small;"></span>
                     <br/>
-                    <span t-field="o.partner_bank_id.bank_name_ar" style="text-align:center;width:50%;font-size: small;"></span>
+                    <span t-field="o.partner_bank_id.bank_name_ar"
+                          style="text-align:center;width:50%;font-size: small;"></span>
                 </div>
                 <div class="col-4 border" style="text-align:right;">اسم البنك</div>
             </div>
@@ -493,7 +497,60 @@
                                 </td>
                             </t>
                         </tr>
+                        <t t-if="line_last">
 
+                            <td>
+                                <strong style="display: inline-block">NET</strong>
+
+                            </td>
+
+                        </t>
+                        <t t-if="line_last">
+
+                            <td class="border text-right">
+
+                            </td>
+
+                        </t>
+                        <t t-if="line_last">
+
+                            <td class="border text-right">
+
+                            </td>
+
+                        </t>
+
+                        <t t-if="line_last">
+
+                            <td class="border text-right">
+                                <strong style="display: inline-block">VAT15%</strong>
+                            </td>
+
+                        </t>
+                        <t t-if="line_last">
+
+                            <td class="border text-right">
+
+                                <span style="float: right;" t-esc="current_subtotal"
+                                      t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                            </td>
+
+                        </t>
+                        <t t-if="line_last">
+
+                            <td class="border text-right">
+                                <span class="text-nowrap" t-field="o.amount_tax"/>
+                            </td>
+
+                        </t>
+                        <t t-if="line_last">
+
+                            <td class="border text-right">
+                                <span class="text-nowrap" t-field="o.amount_total"/>
+
+                            </td>
+
+                        </t>
                         <t t-if="current_section and (line_last or lines[line_index+1].display_type == 'line_section')">
                             <tr class="border is-subtotal text-right" style="background: #D3D8D7  !important;">
                                 <td cclass="border" olspan="99" style="background: #D3D8D7  !important;">
@@ -507,11 +564,126 @@
                 </tbody>
             </table>
         </xpath>
+        <xpath expr="//div[@class='clearfix pt-4 pb-3']/div[@class='row']/div[@class='col-6']" position="replace">
+            <table class="table table-sm" style="page-break-inside: avoid;">
+                <tr class="border-black o_subtotal">
+                    <td>
+                        <strong>
+                            Subtotal
+                            /
+                            الإجمالي الفرعي
+                        </strong>
+                    </td>
+                    <td class="text-right">
+                        <span t-field="o.amount_untaxed"/>
+                    </td>
+                </tr>
+                <t t-if="len(o.additional_lines) > 0">
+                    <t t-set="adds"
+                       t-value="o.additional_lines"/>
+
+
+                    <t t-foreach="adds" t-as="add">
+                        <tr class="border-black o_subtotal">
+                            <td>
+                                <strong>
+                                    <span t-esc="add.name"/>
+                                </strong>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="add.amount"
+                                      t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                            </td>
+                        </tr>
+                    </t>
+
+                </t>
+                <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
+                <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+                    <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+                    <t t-call="account.tax_groups_totals"/>
+                </t>
+                <t t-if="len(o.additional_lines) > 0">
+                    <t t-set="adds"
+                       t-value="o.additional_lines"/>
+
+                    <t t-set="current_total" t-value="0"/>
+                    <t t-foreach="adds" t-as="add">
+                        <t t-set="subtotal_to_show" t-value="add['amount']"/>
+                    </t>
+                    <t t-set="current_total" t-value="current_total +o.amount_total +subtotal_to_show"/>
+
+                </t>
+                <tr class="border-black o_total">
+                    <td>
+                        <strong>
+                            Total (Amount includes VAT)
+                            /
+                            (المبلغ يشمل ضريبة القيمة المضافة)المجموع
+                        </strong>
+                    </td>
+                    <td class="text-right">
+                        <!--                        <span class="text-nowrap" t-field="o.amount_total"/>-->
+                        <span class="text-nowrap" t-esc="current_total"
+                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                    </td>
+                </tr>
+
+                <t t-if="print_with_payments">
+                    <t t-if="o.payment_state != 'invoicing_legacy'">
+                        <t t-set="payments_vals" t-value="o.sudo()._get_reconciled_info_JSON_values()"/>
+                        <t t-foreach="payments_vals" t-as="payment_vals">
+                            <tr class="border-black o_total">
+                                <td>
+                                    <i class="row">
+                                        <div class="col-7 oe_form_field oe_payment_label">
+                                            Paid on/دفعت في:
+                                        </div>
+                                        <div class="col-5 pl-0 oe_form_field oe_payment_label">
+                                            <t t-out="payment_vals['date']"/>
+                                        </div>
+                                    </i>
+                                </td>
+                                <td class="text-right">
+                                    <span t-out="payment_vals['amount']"
+                                          t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </td>
+                            </tr>
+                        </t>
+                        <t t-if="len(payments_vals) &gt; 0">
+                            <tr class="border-black">
+                                <td>
+                                    <strong>
+                                        Amount Due
+                                        /
+                                        المبلغ المستحق
+                                    </strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_residual"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                </t>
+            </table>
+        </xpath>
         <xpath expr="//div[@class='clearfix pt-4 pb-3']" position="after">
             <div class="row p-1 mt-1 bg-light">
                 <div class="col-12">
+                    <t t-if="len(o.additional_lines) > 0">
+                        <t t-set="adds"
+                           t-value="o.additional_lines"/>
+
+                        <t t-set="current_total" t-value="0"/>
+                        <t t-foreach="adds" t-as="add">
+                            <t t-set="subtotal_to_show" t-value="add['amount']"/>
+                        </t>
+                        <t t-set="current_total" t-value="current_total +o.amount_total +subtotal_to_show"/>
+
+                    </t>
                     <Strong>Amount in words:</Strong>
-                    <span t-esc="o.currency_id.amount_to_text(o.amount_total)"/>
+                    <span t-esc="o.currency_id.amount_to_text(current_total)"/>
                 </div>
             </div>
             <div class="row p-1 mt-1 bg-light">

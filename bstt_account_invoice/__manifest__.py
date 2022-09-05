@@ -13,6 +13,7 @@
     "depends": ['base', 'web', 'l10n_gcc_invoice', 'l10n_sa', 'l10n_sa_invoice'],
     "data": [
         'security/account_security.xml',
+        'security/ir.model.access.csv',
         'views/account.xml',
         'views/company.xml',
         'views/partner.xml',

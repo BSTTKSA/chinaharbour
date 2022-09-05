@@ -14,6 +14,7 @@ class AccountMove(models.Model):
     channge_code = fields.Char(compute='_change_code')
     fromdate = fields.Date(string='From Date', default=fields.Date.context_today, copy=False)
     todate = fields.Date(string='To Date', default=fields.Date.context_today, copy=False)
+    additional_lines = fields.One2many('additional.move.lines', 'move_id', string='Additional Lines')
 
     def _change_code(self):
         if self.project_name and self.project_code:
@@ -52,3 +53,11 @@ class AccountMove(models.Model):
                 str_to_encode = seller_name_enc + company_vat_enc + timestamp_enc + invoice_total_enc + total_vat_enc
                 qr_code_str = base64.b64encode(str_to_encode).decode('UTF-8')
             record.l10n_sa_qr_code_str = qr_code_str
+
+
+class LinesAccountMoveRintation(models.Model):
+    _name = 'additional.move.lines'
+
+    move_id = fields.Many2one('account.move')
+    name = fields.Char(string='Description')
+    amount = fields.Float(string='Amount')

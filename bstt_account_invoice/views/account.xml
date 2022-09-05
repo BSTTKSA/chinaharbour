@@ -21,6 +21,20 @@
                         <field name="todate"/>
                     </div>
                 </xpath>
+                <xpath expr="//field[@name='narration']" position="before">
+                    <div style="width=30%;">
+
+                        <field name="additional_lines"
+                               attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="amount"/>
+                            </tree>
+                        </field>
+                    </div>
+
+
+                </xpath>
 
             </field>
         </record>
