@@ -630,9 +630,18 @@
                         </strong>
                     </td>
                     <td class="text-right">
+                        <t t-if="len(o.additional_lines) > 0">
+                            <span class="text-nowrap" t-esc="current_total"
+                                  t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+
+                        </t>
+                        <t t-else="">
+                            <span class="text-nowrap" t-field="o.amount_total"/>
+
+                        </t>
                         <!--                        <span class="text-nowrap" t-field="o.amount_total"/>-->
-                        <span class="text-nowrap" t-esc="current_total"
-                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                        <!--                        <span class="text-nowrap" t-esc="current_total"-->
+                        <!--                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>-->
                     </td>
                 </tr>
 
@@ -687,10 +696,17 @@
                             <t t-set="subtotal_to_show" t-value="add['amount']"/>
                         </t>
                         <t t-set="current_total" t-value="current_total +o.amount_total +subtotal_to_show"/>
+                        <Strong>Amount in words:</Strong>
+                        <span t-esc="o.currency_id.amount_to_text(current_total)"/>
 
                     </t>
-                    <Strong>Amount in words:</Strong>
-                    <span t-esc="o.currency_id.amount_to_text(current_total)"/>
+                    <t t-else="">
+                        <Strong>Amount in words:</Strong>
+                        <span t-esc="o.currency_id.amount_to_text(o.amount_total)"/>
+
+                    </t>
+<!--                    <Strong>Amount in words:</Strong>-->
+<!--                    <span t-esc="o.currency_id.amount_to_text(current_total)"/>-->
                 </div>
             </div>
             <div class="row p-1 mt-1 bg-light">
