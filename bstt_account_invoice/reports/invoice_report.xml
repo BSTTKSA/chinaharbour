@@ -519,7 +519,7 @@
                             </td>
 
                         </t>
-                        <t t-if="line_last">
+                        <t t-if="o.company_id.show_product_code and line_last" >
 
                             <td class="border text-right">
 
