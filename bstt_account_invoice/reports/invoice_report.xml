@@ -519,6 +519,13 @@
                             </td>
 
                         </t>
+                        <t t-if="line_last">
+
+                            <td class="border text-right">
+
+                            </td>
+
+                        </t>
 
                         <t t-if="line_last">
 
