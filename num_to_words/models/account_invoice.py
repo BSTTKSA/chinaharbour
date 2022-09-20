@@ -16,7 +16,7 @@ class AccountInvoice(models.Model):
                 addition = 0
                 for add in self.additional_lines:
                     addition += add.amount
-                total = self.amount_total + addition
+                total = round(float(self.amount_total + addition), 2)
                 self.text_amount = num2words(total, to='currency',
                                              lang=self.company_id.text_amount_language_currency)
 
